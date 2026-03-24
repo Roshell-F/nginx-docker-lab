@@ -1,9 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Mi servidor con Docker</title>
+    <meta charset="UTF-8">
+    <title>Mi Servidor Docker</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+
+        h1 {
+            font-size: 3em;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            background-color: #00c9ff;
+            color: black;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #92fe9d;
+            transform: scale(1.1);
+        }
+
+        #hora {
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(-20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Hola mundo</h1>
+
+    <div class="container">
+        <h1> Servidor Nginx con Docker</h1>
+        <p>Proyecto de Roshell Fajardo</p>
+
+        <button onclick="mostrarHora()">Ver hora actual</button>
+
+        <div id="hora"></div>
+    </div>
+
+    <script>
+        function mostrarHora() {
+            const ahora = new Date();
+            document.getElementById("hora").innerHTML =
+                "Hora actual: " + ahora.toLocaleTimeString();
+        }
+    </script>
+
 </body>
 </html>
